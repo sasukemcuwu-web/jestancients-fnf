@@ -32,7 +32,7 @@ CANCIONES = [
          escala=1.25, escenario="jestAncientsGlamour", rejilla=(120, 30, 90), fondo=(14, 4, 12)),
     dict(id="megalovania", nombre="Megalovania", artista="Toby Fox (cover de RichaadEB)", charter="Newt",
          ch=CANC / "megalovania/ch", audio="song.opus", partes=("ExpertSingle",),
-         rival="jestSans", rival_nombre="Sans", prefijo="sans", hoja=CANC / "megalovania/sans-poses.png",
+         rival="jestSans", rival_nombre="Sans", prefijo="sans", hoja=CANC / "megalovania/sans-poses.png", romper=False,  # Juan: "el de Sans está bien" (18 nov)
          escala=1.25, escenario="jestAncientsSans", rejilla=(30, 60, 120), fondo=(2, 4, 10)),
 ]
 
@@ -68,7 +68,7 @@ def leer_chart(ruta):
     return ms, notas, bpms
 
 
-def hacer_jugable(lst, gap_min=115, jack_ms=200, max_por_seg=8):
+def hacer_jugable(lst, gap_min=115, jack_ms=200, max_por_seg=8, romper=True):
     """Black Knife se sentía injugable (444 jacks < 200 ms, picos de 10 notas/s, 55 % en ↓). Criterios de Juan:
     nada de jacks rápidos (pasan al carril vecino siguiendo el gesto), separación mínima, máx. ~8 pulsaciones/s
     en ventanas de 1 s, y la abierta del bajo no siempre en ↓ (alterna ↓/↑ para no amontonar)."""
@@ -95,7 +95,55 @@ def hacer_jugable(lst, gap_min=115, jack_ms=200, max_por_seg=8):
         for k in nuevos: lane_t[k] = t
         prev_lane = nuevos[-1]
         out.append((t, sorted(nuevos), l)); ult_t = t; ventana.append(t)
-    return variar(equilibrar(out, jack_ms))
+    v = variar(equilibrar(out, jack_ms))
+    return romper_repeticiones(v) if romper else v
+
+
+def repeticiones_seguidas(seq, pmin=3, pmax=8, veces=3):
+    """Tramos donde un motivo de largo p se repite idéntico >= `veces` veces seguidas: [(inicio, fin, p)]."""
+    tramos, i = [], 0
+    while i < len(seq):
+        mejor = None
+        for p in range(pmin, pmax + 1):
+            j = i + p
+            while j < len(seq) and seq[j] == seq[j - p]:
+                j += 1
+            if (j - i) >= p * veces and (mejor is None or j - i > mejor[1] - mejor[0]):
+                mejor = (i, j, p)
+        if mejor:
+            tramos.append(mejor); i = mejor[1]
+        else:
+            i += 1
+    return tramos
+
+
+def romper_repeticiones(lst):
+    """Juan (18 nov): si un dibujo se repite idéntico muchas veces seguidas (dfjkjkj dfjkjkj dfjkjkj…), variarlo,
+    pero con variantes cercanas para que no se sienta otra canción: original, espejo (← ↔ →, ↓ ↔ ↑), original, al revés.
+    Si ya hay variación, no se toca. Solo cuenta notas sueltas; los acordes cortan el motivo."""
+    lst = [(t, list(cs), l) for t, cs, l in lst]
+    idx = [n for n, (_, cs, _) in enumerate(lst) if len(cs) == 1]
+    seq = [lst[n][1][0] for n in idx]
+    variantes = [lambda m: m, lambda m: [3 - k for k in m], lambda m: m, lambda m: m[::-1]]
+    for a, b, p in repeticiones_seguidas(seq):
+        motivo = seq[a:a + p]
+        for r, ini in enumerate(range(a, b, p)):
+            nuevo = variantes[r % 4](motivo)
+            for q, pos in enumerate(range(ini, min(ini + p, b))):
+                lst[idx[pos]] = (lst[idx[pos]][0], [nuevo[q]], lst[idx[pos]][2])
+    # repaso anti-jacks (< 200 ms)
+    ult = {}
+    for n, (t, cs, l) in enumerate(lst):
+        nuevos = []
+        for k in cs:
+            if k in ult and t - ult[k] < 200:
+                for cand in (k + 1, k - 1, k + 2, k - 2, k + 3, k - 3):
+                    if 0 <= cand <= 3 and cand not in nuevos and (cand not in ult or t - ult[cand] >= 200):
+                        k = cand; break
+            if k not in nuevos: nuevos.append(k)
+        for k in nuevos: ult[k] = t
+        lst[n] = (t, nuevos, l)
+    return [(t, sorted(cs), l) for t, cs, l in lst]
 
 
 def variar(lst, ventana=6):
@@ -197,7 +245,7 @@ def construir_cancion(c):
     }
     chart_notes = {}
     for dif, (gap, mps, ac, turnos) in NIVELES.items():
-        lst = hacer_jugable(base_erect if dif in ("erect", "nightmare") else base, gap_min=gap, max_por_seg=mps)
+        lst = hacer_jugable(base_erect if dif in ("erect", "nightmare") else base, gap_min=gap, max_por_seg=mps, romper=c.get("romper", True))
         if turnos:
             riv = [n for n in lst if turno(n[0]) == 0]; jug_ = [n for n in lst if turno(n[0]) == 1]
         else:
@@ -429,6 +477,7 @@ dst = JUEGO / "JestAncients"
 if dst.exists(): shutil.rmtree(dst)
 shutil.copytree(MOD, dst)
 print(f"JestAncients listo con {canciones}; instalado en {dst}")
+
 
 
 
