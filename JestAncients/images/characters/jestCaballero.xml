@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="jestCaballero.png">
+  <SubTexture name="caballero idle0000" x="0" y="0" width="499" height="486"/>
+  <SubTexture name="caballero idle0001" x="499" y="0" width="499" height="486"/>
+  <SubTexture name="caballero idle0002" x="998" y="0" width="499" height="486"/>
+  <SubTexture name="caballero idle0003" x="1497" y="0" width="499" height="486"/>
+  <SubTexture name="caballero idle0004" x="1996" y="0" width="499" height="486"/>
+  <SubTexture name="caballero idle0005" x="2495" y="0" width="499" height="486"/>
+  <SubTexture name="caballero singLEFT0000" x="0" y="486" width="499" height="486"/>
+  <SubTexture name="caballero singLEFT0001" x="499" y="486" width="499" height="486"/>
+  <SubTexture name="caballero singLEFT0002" x="998" y="486" width="499" height="486"/>
+  <SubTexture name="caballero singLEFT0003" x="1497" y="486" width="499" height="486"/>
+  <SubTexture name="caballero singDOWN0000" x="1996" y="486" width="499" height="486"/>
+  <SubTexture name="caballero singDOWN0001" x="2495" y="486" width="499" height="486"/>
+  <SubTexture name="caballero singDOWN0002" x="0" y="972" width="499" height="486"/>
+  <SubTexture name="caballero singDOWN0003" x="499" y="972" width="499" height="486"/>
+  <SubTexture name="caballero singUP0000" x="998" y="972" width="499" height="486"/>
+  <SubTexture name="caballero singUP0001" x="1497" y="972" width="499" height="486"/>
+  <SubTexture name="caballero singUP0002" x="1996" y="972" width="499" height="486"/>
+  <SubTexture name="caballero singUP0003" x="2495" y="972" width="499" height="486"/>
+  <SubTexture name="caballero singRIGHT0000" x="0" y="1458" width="499" height="486"/>
+  <SubTexture name="caballero singRIGHT0001" x="499" y="1458" width="499" height="486"/>
+  <SubTexture name="caballero singRIGHT0002" x="998" y="1458" width="499" height="486"/>
+  <SubTexture name="caballero singRIGHT0003" x="1497" y="1458" width="499" height="486"/>
+  <SubTexture name="caballero poder0000" x="1996" y="1458" width="499" height="486"/>
+  <SubTexture name="caballero poder0001" x="2495" y="1458" width="499" height="486"/>
+  <SubTexture name="caballero poder0002" x="0" y="1944" width="499" height="486"/>
+  <SubTexture name="caballero poder0003" x="499" y="1944" width="499" height="486"/>
+  <SubTexture name="caballero golpe0000" x="998" y="1944" width="499" height="486"/>
+  <SubTexture name="caballero golpe0001" x="1497" y="1944" width="499" height="486"/>
+  <SubTexture name="caballero golpe0002" x="1996" y="1944" width="499" height="486"/>
+  <SubTexture name="caballero golpe0003" x="2495" y="1944" width="499" height="486"/>
+</TextureAtlas>

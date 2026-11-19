@@ -1,0 +1,111 @@
+{
+ "version": "1.0.0",
+ "name": "Penumbra (angel)",
+ "danceEvery": 2,
+ "scale": 2.0,
+ "offsets": [
+  0,
+  0
+ ],
+ "flipX": false,
+ "singTime": 6,
+ "startingAnimation": "idle",
+ "isPixel": true,
+ "assetPath": "characters/penumbraAngel",
+ "healthIcon": {
+  "id": "penumbra",
+  "offsets": [
+   0,
+   0
+  ],
+  "flipX": false,
+  "isPixel": false,
+  "scale": 1
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "prefix": "angel idle",
+   "frameRate": 10,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singLEFT",
+   "prefix": "angel singLEFT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singDOWN",
+   "prefix": "angel singDOWN",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singUP",
+   "prefix": "angel singUP",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singRIGHT",
+   "prefix": "angel singRIGHT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "poder",
+   "prefix": "angel poder",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "golpe",
+   "prefix": "angel golpe",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  }
+ ]
+}

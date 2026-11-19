@@ -1,0 +1,35 @@
+{
+ "version": "2.2.4",
+ "songName": "Black Knife Erect",
+ "artist": "Toby Fox",
+ "charter": "Gooba (Clone Hero) / El\u00edas",
+ "offsets": {},
+ "playData": {
+  "songVariations": [],
+  "difficulties": [
+   "erect",
+   "nightmare"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "",
+   "opponent": "jestCaballero",
+   "opponentVocals": [],
+   "playerVocals": [],
+   "instrumental": ""
+  },
+  "stage": "jestAncientsNoche",
+  "noteStyle": "funkin",
+  "ratings": {
+   "erect": 12,
+   "nightmare": 15
+  }
+ },
+ "generatedBy": "El\u00edas",
+ "timeChanges": [
+  {
+   "t": 0.0,
+   "bpm": 147.5
+  }
+ ]
+}

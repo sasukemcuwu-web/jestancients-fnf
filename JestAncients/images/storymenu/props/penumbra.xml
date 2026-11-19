@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="penumbra.png">
+  <SubTexture name="penumbra idle0000" x="0" y="0" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0001" x="340" y="0" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0002" x="680" y="0" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0003" x="1020" y="0" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0004" x="1360" y="0" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0005" x="1700" y="0" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0006" x="0" y="320" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0007" x="340" y="320" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0008" x="680" y="320" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra idle0009" x="1020" y="320" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singLEFT0000" x="1360" y="320" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singLEFT0001" x="1700" y="320" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singLEFT0002" x="0" y="640" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singLEFT0003" x="340" y="640" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singLEFT0004" x="680" y="640" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singLEFT0005" x="1020" y="640" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singDOWN0000" x="1360" y="640" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singDOWN0001" x="1700" y="640" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singDOWN0002" x="0" y="960" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singDOWN0003" x="340" y="960" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singDOWN0004" x="680" y="960" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singDOWN0005" x="1020" y="960" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singUP0000" x="1360" y="960" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singUP0001" x="1700" y="960" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singUP0002" x="0" y="1280" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singUP0003" x="340" y="1280" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singUP0004" x="680" y="1280" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singUP0005" x="1020" y="1280" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singRIGHT0000" x="1360" y="1280" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singRIGHT0001" x="1700" y="1280" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singRIGHT0002" x="0" y="1600" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singRIGHT0003" x="340" y="1600" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singRIGHT0004" x="680" y="1600" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+  <SubTexture name="penumbra singRIGHT0005" x="1020" y="1600" width="340" height="320" frameX="0" frameY="0" frameWidth="340" frameHeight="320" />
+</TextureAtlas>

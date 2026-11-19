@@ -1,0 +1,106 @@
+{
+ "version": "1.0.0",
+ "name": "Penumbra (como en el juego)",
+ "cameraZoom": 0.75,
+ "props": [
+  {
+   "name": "remolino",
+   "assetPath": "stages/penumbra/remolino",
+   "position": [
+    -860,
+    -510
+   ],
+   "scroll": [
+    0.05,
+    0.05
+   ],
+   "zIndex": 1,
+   "alpha": 0.0,
+   "scale": [
+    2,
+    2
+   ],
+   "isPixel": true,
+   "danceEvery": 0,
+   "animations": []
+  },
+  {
+   "name": "remolino2",
+   "assetPath": "stages/penumbra/remolino2",
+   "position": [
+    -860,
+    -510
+   ],
+   "scroll": [
+    0.06,
+    0.06
+   ],
+   "zIndex": 2,
+   "alpha": 0.0,
+   "scale": [
+    2,
+    2
+   ],
+   "isPixel": true,
+   "danceEvery": 0,
+   "animations": []
+  },
+  {
+   "name": "rejilla",
+   "assetPath": "stages/penumbra/rejilla",
+   "position": [
+    -960,
+    -640
+   ],
+   "scroll": [
+    0.05,
+    0.05
+   ],
+   "zIndex": 3,
+   "alpha": 0.6,
+   "scale": [
+    2,
+    2
+   ],
+   "isPixel": true,
+   "danceEvery": 0,
+   "animations": []
+  }
+ ],
+ "characters": {
+  "bf": {
+   "zIndex": 300,
+   "position": [
+    1220,
+    860
+   ],
+   "cameraOffsets": [
+    -120,
+    -60
+   ]
+  },
+  "dad": {
+   "zIndex": 200,
+   "position": [
+    300,
+    900
+   ],
+   "cameraOffsets": [
+    200,
+    40
+   ],
+   "scale": 1.0
+  },
+  "gf": {
+   "zIndex": 100,
+   "position": [
+    820,
+    820
+   ],
+   "cameraOffsets": [
+    0,
+    0
+   ]
+  }
+ }
+}

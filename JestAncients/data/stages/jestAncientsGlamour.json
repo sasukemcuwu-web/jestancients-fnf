@@ -1,0 +1,63 @@
+{
+ "version": "1.0.0",
+ "name": "JestAncients: Death by Glamour",
+ "cameraZoom": 0.8,
+ "props": [
+  {
+   "name": "fondo",
+   "assetPath": "stages/jestancients/jestAncientsGlamour",
+   "position": [
+    -960,
+    -640
+   ],
+   "scroll": [
+    0.05,
+    0.05
+   ],
+   "zIndex": 1,
+   "scale": [
+    1,
+    1
+   ],
+   "isPixel": true,
+   "danceEvery": 0,
+   "animations": []
+  }
+ ],
+ "characters": {
+  "bf": {
+   "zIndex": 300,
+   "position": [
+    1220,
+    860
+   ],
+   "cameraOffsets": [
+    -120,
+    -60
+   ]
+  },
+  "dad": {
+   "zIndex": 200,
+   "position": [
+    300,
+    900
+   ],
+   "cameraOffsets": [
+    200,
+    40
+   ],
+   "scale": 1.0
+  },
+  "gf": {
+   "zIndex": 100,
+   "position": [
+    820,
+    820
+   ],
+   "cameraOffsets": [
+    0,
+    0
+   ]
+  }
+ }
+}

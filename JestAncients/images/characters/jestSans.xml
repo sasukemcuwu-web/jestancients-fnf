@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="jestSans.png">
+  <SubTexture name="sans idle0000" x="0" y="0" width="466" height="464"/>
+  <SubTexture name="sans idle0001" x="466" y="0" width="466" height="464"/>
+  <SubTexture name="sans idle0002" x="932" y="0" width="466" height="464"/>
+  <SubTexture name="sans idle0003" x="1398" y="0" width="466" height="464"/>
+  <SubTexture name="sans idle0004" x="1864" y="0" width="466" height="464"/>
+  <SubTexture name="sans idle0005" x="2330" y="0" width="466" height="464"/>
+  <SubTexture name="sans singLEFT0000" x="0" y="464" width="466" height="464"/>
+  <SubTexture name="sans singLEFT0001" x="466" y="464" width="466" height="464"/>
+  <SubTexture name="sans singLEFT0002" x="932" y="464" width="466" height="464"/>
+  <SubTexture name="sans singLEFT0003" x="1398" y="464" width="466" height="464"/>
+  <SubTexture name="sans singDOWN0000" x="1864" y="464" width="466" height="464"/>
+  <SubTexture name="sans singDOWN0001" x="2330" y="464" width="466" height="464"/>
+  <SubTexture name="sans singDOWN0002" x="0" y="928" width="466" height="464"/>
+  <SubTexture name="sans singDOWN0003" x="466" y="928" width="466" height="464"/>
+  <SubTexture name="sans singUP0000" x="932" y="928" width="466" height="464"/>
+  <SubTexture name="sans singUP0001" x="1398" y="928" width="466" height="464"/>
+  <SubTexture name="sans singUP0002" x="1864" y="928" width="466" height="464"/>
+  <SubTexture name="sans singUP0003" x="2330" y="928" width="466" height="464"/>
+  <SubTexture name="sans singRIGHT0000" x="0" y="1392" width="466" height="464"/>
+  <SubTexture name="sans singRIGHT0001" x="466" y="1392" width="466" height="464"/>
+  <SubTexture name="sans singRIGHT0002" x="932" y="1392" width="466" height="464"/>
+  <SubTexture name="sans singRIGHT0003" x="1398" y="1392" width="466" height="464"/>
+  <SubTexture name="sans poder0000" x="1864" y="1392" width="466" height="464"/>
+  <SubTexture name="sans poder0001" x="2330" y="1392" width="466" height="464"/>
+  <SubTexture name="sans poder0002" x="0" y="1856" width="466" height="464"/>
+  <SubTexture name="sans poder0003" x="466" y="1856" width="466" height="464"/>
+  <SubTexture name="sans golpe0000" x="932" y="1856" width="466" height="464"/>
+  <SubTexture name="sans golpe0001" x="1398" y="1856" width="466" height="464"/>
+  <SubTexture name="sans golpe0002" x="1864" y="1856" width="466" height="464"/>
+  <SubTexture name="sans golpe0003" x="2330" y="1856" width="466" height="464"/>
+</TextureAtlas>

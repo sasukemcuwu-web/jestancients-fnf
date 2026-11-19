@@ -1,0 +1,111 @@
+{
+ "version": "1.0.0",
+ "name": "Sans",
+ "danceEvery": 2,
+ "scale": 1.25,
+ "offsets": [
+  0,
+  0
+ ],
+ "flipX": false,
+ "singTime": 6,
+ "startingAnimation": "idle",
+ "isPixel": true,
+ "assetPath": "characters/jestSans",
+ "healthIcon": {
+  "id": "jestSans",
+  "offsets": [
+   0,
+   0
+  ],
+  "flipX": false,
+  "isPixel": true,
+  "scale": 1
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "prefix": "sans idle",
+   "frameRate": 10,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singLEFT",
+   "prefix": "sans singLEFT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singDOWN",
+   "prefix": "sans singDOWN",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singUP",
+   "prefix": "sans singUP",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singRIGHT",
+   "prefix": "sans singRIGHT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "poder",
+   "prefix": "sans poder",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "golpe",
+   "prefix": "sans golpe",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  }
+ ]
+}

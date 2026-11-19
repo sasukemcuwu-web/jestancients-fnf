@@ -1,0 +1,126 @@
+{
+ "version": "1.0.0",
+ "name": "Vac\u00edo de Penumbra",
+ "cameraZoom": 0.75,
+ "props": [
+  {
+   "name": "agua",
+   "assetPath": "stages/penumbra/agua",
+   "position": [
+    -1140,
+    -695
+   ],
+   "scale": [
+    1,
+    1
+   ],
+   "scroll": [
+    0.3,
+    0.3
+   ],
+   "zIndex": 1,
+   "alpha": 1.0,
+   "isPixel": true,
+   "danceEvery": 0,
+   "animations": []
+  },
+  {
+   "name": "simbolos",
+   "assetPath": "stages/penumbra/simbolos",
+   "position": [
+    -940,
+    -570
+   ],
+   "scale": [
+    1,
+    1
+   ],
+   "scroll": [
+    0.55,
+    0.55
+   ],
+   "zIndex": 2,
+   "alpha": 1.0,
+   "isPixel": true,
+   "danceEvery": 0,
+   "animations": []
+  },
+  {
+   "name": "piso",
+   "assetPath": "stages/penumbra/piso",
+   "position": [
+    -620,
+    -370
+   ],
+   "scale": [
+    1,
+    1
+   ],
+   "scroll": [
+    0.95,
+    0.95
+   ],
+   "zIndex": 5,
+   "alpha": 1.0,
+   "isPixel": true,
+   "danceEvery": 0,
+   "animations": []
+  },
+  {
+   "name": "frente",
+   "assetPath": "stages/penumbra/frente",
+   "position": [
+    -680,
+    680
+   ],
+   "scale": [
+    1,
+    1
+   ],
+   "scroll": [
+    1.25,
+    1.1
+   ],
+   "zIndex": 400,
+   "alpha": 0.9,
+   "isPixel": true,
+   "danceEvery": 0,
+   "animations": []
+  }
+ ],
+ "characters": {
+  "bf": {
+   "zIndex": 300,
+   "position": [
+    1220,
+    860
+   ],
+   "cameraOffsets": [
+    -120,
+    -60
+   ]
+  },
+  "dad": {
+   "zIndex": 200,
+   "position": [
+    300,
+    900
+   ],
+   "cameraOffsets": [
+    200,
+    40
+   ]
+  },
+  "gf": {
+   "zIndex": 100,
+   "position": [
+    820,
+    820
+   ],
+   "cameraOffsets": [
+    0,
+    0
+   ]
+  }
+ }
+}

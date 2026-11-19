@@ -1,0 +1,111 @@
+{
+ "version": "1.0.0",
+ "name": "Caballero",
+ "danceEvery": 2,
+ "scale": 2.0,
+ "offsets": [
+  0,
+  0
+ ],
+ "flipX": false,
+ "singTime": 6,
+ "startingAnimation": "idle",
+ "isPixel": true,
+ "assetPath": "characters/jestCaballero",
+ "healthIcon": {
+  "id": "jestCaballero",
+  "offsets": [
+   0,
+   0
+  ],
+  "flipX": false,
+  "isPixel": true,
+  "scale": 1
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "prefix": "caballero idle",
+   "frameRate": 10,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singLEFT",
+   "prefix": "caballero singLEFT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singDOWN",
+   "prefix": "caballero singDOWN",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singUP",
+   "prefix": "caballero singUP",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singRIGHT",
+   "prefix": "caballero singRIGHT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "poder",
+   "prefix": "caballero poder",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "golpe",
+   "prefix": "caballero golpe",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  }
+ ]
+}

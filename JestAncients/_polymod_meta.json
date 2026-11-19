@@ -1,0 +1,33 @@
+{
+ "title": "JestAncients",
+ "description": "Mod de Juan (JestAncients): Black Knife, Death by Glamour, Megalovania y Penumbra Phantasm.",
+ "contributors": [
+  {
+   "name": "Toby Fox",
+   "role": "Música"
+  },
+  {
+   "name": "surreal",
+   "role": "Penumbra Phantasm (versión y portada)"
+  },
+  {
+   "name": "Gooba, The Aftermath, Newt",
+   "role": "Charts originales (Clone Hero)"
+  },
+  {
+   "name": "RichaadEB",
+   "role": "Megalovania (cover metal)"
+  },
+  {
+   "name": "Elías",
+   "role": "Conversión, escenarios y empaquetado"
+  },
+  {
+   "name": "Juan",
+   "role": "Dirección"
+  }
+ ],
+ "api_version": "0.8.4",
+ "mod_version": "1.1.0",
+ "license": "Uso personal"
+}

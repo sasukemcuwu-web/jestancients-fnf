@@ -1,0 +1,251 @@
+import flixel.FlxSprite;
+import flixel.text.FlxText;
+import funkin.Conductor;
+import funkin.Paths;
+import funkin.Preferences;
+import funkin.play.PlayState;
+import funkin.play.stage.Stage;
+
+// Escenario de Penumbra como se ve en el juego (medido del video de referencia, sincronizado con la canción):
+//  - antes de 94,23 s: rejilla de batalla sobre negro, desplazándose, con el tono girando despacio;
+//  - en 94,23 s: destello y entra el fondo de remolinos;
+//  - desde ahí el color gira 26 grados por segundo (desde el tono 193) y el brillo respira.
+class PenumbraJuegoStage extends Stage
+{
+  function new()
+  {
+    super('penumbraJuego');
+  }
+
+  var CAMBIO:Float = 94230;
+  var destello:Bool = false;
+  var deriva:Float = 0;
+  // corrección del agrandado x2 de cada capa (offset que deja updateHitbox); el movimiento se SUMA a esto, no lo reemplaza
+  var colocado:Bool = false;
+  var bx0:Float = 0; var by0:Float = 0; var bx1:Float = 0; var by1:Float = 0; var bx2:Float = 0; var by2:Float = 0;
+  function colocar(rej:FlxSprite, r1:FlxSprite, r2:FlxSprite)
+  {
+    if (colocado) return;
+    rej.updateHitbox(); r1.updateHitbox(); r2.updateHitbox();
+    bx0 = rej.offset.x; by0 = rej.offset.y;
+    bx1 = r1.offset.x; by1 = r1.offset.y;
+    bx2 = r2.offset.x; by2 = r2.offset.y;
+    colocado = true;
+  }
+
+  function buildStage()
+  {
+    super.buildStage();
+    // las capas vienen a la mitad con scale 2: que el tamaño cuente desde la esquina (si no, la imagen queda corrida)
+    for (n in ['remolino', 'remolino2', 'rejilla'])
+    {
+      var p:FlxSprite = getNamedProp(n);
+      if (p != null) p.updateHitbox();
+    }
+    destello = false;
+    deriva = 0;
+  }
+
+  // HSV (h en grados, s y v de 0 a 1) a color ARGB
+  function hsv(h:Float, s:Float, v:Float):Int
+  {
+    h = h % 360;
+    if (h < 0) h += 360;
+    var c:Float = v * s;
+    var x:Float = c * (1 - Math.abs((h / 60) % 2 - 1));
+    var m:Float = v - c;
+    var r:Float = 0;
+    var g:Float = 0;
+    var b:Float = 0;
+    if (h < 60) { r = c; g = x; }
+    else if (h < 120) { r = x; g = c; }
+    else if (h < 180) { g = c; b = x; }
+    else if (h < 240) { g = x; b = c; }
+    else if (h < 300) { r = x; b = c; }
+    else { r = c; b = x; }
+    var ri:Int = Std.int((r + m) * 255);
+    var gi:Int = Std.int((g + m) * 255);
+    var bi:Int = Std.int((b + m) * 255);
+    return 0xFF000000 | (ri << 16) | (gi << 8) | bi;
+  }
+
+  function onUpdate(event:UpdateScriptEvent):Void
+  {
+    super.onUpdate(event);
+    var t:Float = Conductor.instance.songPosition;
+    var rej:FlxSprite = getNamedProp('rejilla');
+    var r1:FlxSprite = getNamedProp('remolino');
+    var r2:FlxSprite = getNamedProp('remolino2');
+    if (rej == null || r1 == null || r2 == null) return;
+    colocar(rej, r1, r2);
+
+    deriva += event.elapsed;
+    flotar(event.elapsed);
+    actualizarUI(event.elapsed);
+    var seg:Float = t / 1000;
+
+    if (t < CAMBIO)
+    {
+      // intro: rejilla que se desliza en diagonal y cambia de tono despacio; el brillo sube al acercarse el cambio
+      rej.alpha = 0.45 + 0.25 * Math.sin(seg * 0.9);
+      rej.color = hsv(240 + seg * 26, 0.55, 1);
+      rej.offset.x = bx0 + (deriva * 18) % 64;
+      rej.offset.y = by0 + (deriva * 18) % 64;
+      r1.alpha = 0;
+      r2.alpha = 0;
+      r1.visible = false;
+      r2.visible = false;
+      rej.visible = true;
+      if (destello && t < CAMBIO - 500) destello = false; // se volvió atrás (reintento)
+    }
+    else
+    {
+      if (!destello)
+      {
+        destello = true;
+        FlxG.camera.flash(0xFFFFFFFF, 0.8);
+      }
+      var desde:Float = (t - CAMBIO) / 1000;
+      var tono:Float = 193 + desde * 26;
+      var respira:Float = 0.82 + 0.18 * Math.sin(desde * 2 * Math.PI / 23.25);
+      rej.alpha = Math.max(0, 0.6 - desde * 1.5);
+      rej.visible = rej.alpha > 0.01;   // invisible = no se dibuja (menos lag)
+      r1.visible = true;
+      r2.visible = true;
+      r1.alpha = Math.min(1, desde * 3);
+      r2.alpha = Math.min(0.45, desde * 1.5);
+      r1.color = hsv(tono, 0.92, respira);
+      r2.color = hsv(tono + 25, 0.85, respira);
+      // el agua fluye: las dos capas se deslizan en sentidos opuestos
+      r1.offset.x = bx1 + Math.sin(deriva * 0.13) * 60;
+      r1.offset.y = by1 + Math.cos(deriva * 0.09) * 25;
+      r2.offset.x = bx2 - Math.sin(deriva * 0.11) * 80;
+      r2.offset.y = by2 + Math.sin(deriva * 0.07) * 30;
+    }
+  }
+
+  // PRESENCIA DEL ÁNGEL (Juan: "se siente suave, más poder, más presencia"):
+  //  - flota (sube y baja despacio, como un fantasma);
+  //  - cada nota suya sacude un poco la pantalla; las largas y los acordes, más fuerte.
+  var baseY:Float = -99999;
+  var ultimoGolpe:Float = -1;
+  function flotar(elapsed:Float)
+  {
+    var d = getDad();
+    if (d == null) return;
+    if (baseY == -99999) baseY = d.y;
+    d.y = baseY + Math.sin(deriva * 1.6) * 18;
+  }
+
+  override function onNoteHit(event:HitNoteScriptEvent)
+  {
+    super.onNoteHit(event);
+    if (event.note == null || event.note.noteData == null) return;
+    if (event.note.noteData.getMustHitNote())
+    {
+      tp = Math.min(100, tp + 0.6);
+      return;
+    }
+    var t:Float = event.note.noteData.time;
+    var acorde:Bool = Math.abs(t - ultimoGolpe) < 2;
+    ultimoGolpe = t;
+    if (event.note.noteData.length > 0 || acorde)
+    {
+      FlxG.camera.shake(0.006, 0.18);
+      // acordes = pose de poder (la de los ojos brillando)
+      var d = getDad();
+      if (acorde && d != null && d.hasAnimation('poder')) d.playAnimation('poder', true, true);
+    }
+    else
+      FlxG.camera.shake(0.0025, 0.08);
+  }
+
+  // INTERFAZ DE BATALLA ESTILO DELTARUNE (assets de ChatGPT, medidas puestas por ui_deltarune.py):
+  // barra BF/HP abajo (se llena con la vida), medidor TP a la izquierda (sube al acertar, baja al fallar), corazón.
+  var uiHecha:Bool = false;
+  var hpFill:FlxSprite = null;
+  var tpFill:FlxSprite = null;
+  var tp:Float = 0;
+  var cor:FlxSprite = null;
+  var tpTexto:FlxText = null;
+  var tpMostrado:Int = -1;
+  var hpBaja:Bool = false;
+  function crearUI()
+  {
+    if (uiHecha || PlayState.instance == null) return;
+    uiHecha = true;
+    var ps = PlayState.instance;
+    var hud = ps.camHUD;
+    if (ps.healthBar != null) ps.healthBar.visible = false;
+    if (ps.healthBarBG != null) ps.healthBarBG.visible = false;
+    if (ps.iconP1 != null) ps.iconP1.visible = false;
+    if (ps.iconP2 != null) ps.iconP2.visible = false;
+    var bx:Float = (1280 - 560) / 2;
+    // con downscroll las flechas van abajo: la barra va arriba (y al revés)
+    var by:Float = Preferences.downscroll ? 10 : 720 - 54 - 10;
+    var barra = new FlxSprite(bx, by).loadGraphic(Paths.image('ui/penumbra/barra'));
+    hpFill = new FlxSprite(bx + 229, by + 22).makeGraphic(321, 14, 0xFFFDC500);
+    hpFill.origin.set(0, 0);
+    var tx:Float = 1280 - 55 - 14;   // borde derecho, fuera de las flechas
+    var ty:Float = (720 - 300) / 2;
+    var tpImg = new FlxSprite(tx, ty).loadGraphic(Paths.image('ui/penumbra/tp'));
+    tpFill = new FlxSprite(tx + 7, ty + 31).makeGraphic(41, 262, 0xFFFC6C01);
+    tpFill.origin.set(0, 262);
+    cor = new FlxSprite(bx - 48, by + (54 - 36) / 2).loadGraphic(Paths.image('ui/penumbra/corazon'));
+    // porcentaje de TP debajo del medidor (solo se redibuja cuando cambia el número: no da lag)
+    tpTexto = new FlxText(tx - 20, ty + 300 + 4, 55 + 40, '0%', 20);
+    tpTexto.setFormat(Paths.font('vcr.ttf'), 20, 0xFFFFFFFF, 'center');
+    for (s in [barra, hpFill, tpImg, tpFill, cor, tpTexto])
+    {
+      s.cameras = [hud];
+      s.antialiasing = false;
+      s.scrollFactor.set(0, 0);
+      ps.add(s);
+    }
+  }
+
+  override function onCountdownStart(event:CountdownScriptEvent)
+  {
+    super.onCountdownStart(event);
+    crearUI();
+  }
+
+  function actualizarUI(elapsed:Float)
+  {
+    if (!uiHecha || PlayState.instance == null) return;
+    var vida:Float = PlayState.instance.health / 2;
+    if (vida < 0) vida = 0;
+    if (vida > 1) vida = 1;
+    if (hpFill != null)
+    {
+      hpFill.scale.x = vida;
+      var baja:Bool = vida < 0.25;   // poca vida: la barra se pone roja (solo cambia el color al cruzar el límite)
+      if (baja != hpBaja) { hpBaja = baja; hpFill.color = baja ? 0xFFFF3030 : 0xFFFFFFFF; }
+    }
+    if (tpFill != null) tpFill.scale.y = tp / 100;
+    var n:Int = Std.int(tp);
+    if (tpTexto != null && n != tpMostrado) { tpMostrado = n; tpTexto.text = (n >= 100 ? 'MAX' : n + '%'); }
+    // el corazón late con la música y vuelve a su tamaño
+    if (cor != null && cor.scale.x > 1) { var s:Float = Math.max(1, cor.scale.x - elapsed * 2.5); cor.scale.set(s, s); }
+  }
+
+  override function onBeatHit(event:SongTimeScriptEvent)
+  {
+    super.onBeatHit(event);
+    if (cor != null) cor.scale.set(1.3, 1.3);
+  }
+
+  override function onNoteMiss(event:NoteScriptEvent)
+  {
+    super.onNoteMiss(event);
+    tp = Math.max(0, tp - 8);
+  }
+
+  override function onSongRetry(event:ScriptEvent)
+  {
+    super.onSongRetry(event);
+    destello = false;
+    tp = 0;
+    tpMostrado = -1;
+  }
+}

@@ -1,0 +1,111 @@
+{
+ "version": "1.0.0",
+ "name": "Mettaton EX",
+ "danceEvery": 2,
+ "scale": 1.25,
+ "offsets": [
+  0,
+  0
+ ],
+ "flipX": false,
+ "singTime": 6,
+ "startingAnimation": "idle",
+ "isPixel": true,
+ "assetPath": "characters/jestMettaton",
+ "healthIcon": {
+  "id": "jestMettaton",
+  "offsets": [
+   0,
+   0
+  ],
+  "flipX": false,
+  "isPixel": true,
+  "scale": 1
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "prefix": "mettaton idle",
+   "frameRate": 10,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singLEFT",
+   "prefix": "mettaton singLEFT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singDOWN",
+   "prefix": "mettaton singDOWN",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singUP",
+   "prefix": "mettaton singUP",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singRIGHT",
+   "prefix": "mettaton singRIGHT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "poder",
+   "prefix": "mettaton poder",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "golpe",
+   "prefix": "mettaton golpe",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  }
+ ]
+}

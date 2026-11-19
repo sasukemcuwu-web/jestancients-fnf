@@ -1,0 +1,39 @@
+{
+ "version": "2.2.4",
+ "songName": "Black Knife",
+ "artist": "Toby Fox",
+ "charter": "Gooba (Clone Hero) / El\u00edas",
+ "offsets": {},
+ "playData": {
+  "songVariations": [
+   "erect"
+  ],
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "",
+   "opponent": "jestCaballero",
+   "opponentVocals": [],
+   "playerVocals": [],
+   "instrumental": ""
+  },
+  "stage": "jestAncientsNoche",
+  "noteStyle": "funkin",
+  "ratings": {
+   "easy": 3,
+   "normal": 6,
+   "hard": 9
+  }
+ },
+ "generatedBy": "El\u00edas",
+ "timeChanges": [
+  {
+   "t": 0.0,
+   "bpm": 147.5
+  }
+ ]
+}

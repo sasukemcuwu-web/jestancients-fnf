@@ -1,0 +1,87 @@
+{
+ "version": "1.0.0",
+ "name": "Penumbra",
+ "danceEvery": 2,
+ "scale": 0.95,
+ "offsets": [
+  -6,
+  -60
+ ],
+ "flipX": false,
+ "singTime": 6,
+ "startingAnimation": "idle",
+ "isPixel": true,
+ "assetPath": "characters/penumbra",
+ "healthIcon": {
+  "id": "penumbra",
+  "offsets": [
+   0,
+   0
+  ],
+  "flipX": false,
+  "isPixel": false,
+  "scale": 1
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "prefix": "penumbra idle",
+   "frameRate": 24,
+   "looped": true,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singLEFT",
+   "prefix": "penumbra singLEFT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singDOWN",
+   "prefix": "penumbra singDOWN",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singUP",
+   "prefix": "penumbra singUP",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  },
+  {
+   "name": "singRIGHT",
+   "prefix": "penumbra singRIGHT",
+   "frameRate": 24,
+   "looped": false,
+   "offsets": [
+    0,
+    0
+   ],
+   "flipX": false,
+   "flipY": false
+  }
+ ]
+}

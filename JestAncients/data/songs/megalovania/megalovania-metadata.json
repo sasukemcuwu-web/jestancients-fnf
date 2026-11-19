@@ -1,0 +1,43 @@
+{
+ "version": "2.2.4",
+ "songName": "Megalovania",
+ "artist": "Toby Fox (cover de RichaadEB)",
+ "charter": "Newt (Clone Hero) / El\u00edas",
+ "offsets": {},
+ "playData": {
+  "songVariations": [
+   "erect"
+  ],
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "",
+   "opponent": "jestSans",
+   "opponentVocals": [],
+   "playerVocals": [],
+   "instrumental": ""
+  },
+  "stage": "jestAncientsSans",
+  "noteStyle": "funkin",
+  "ratings": {
+   "easy": 3,
+   "normal": 6,
+   "hard": 9
+  }
+ },
+ "generatedBy": "El\u00edas",
+ "timeChanges": [
+  {
+   "t": 0.0,
+   "bpm": 109.2
+  },
+  {
+   "t": 8791.21,
+   "bpm": 120.0
+  }
+ ]
+}

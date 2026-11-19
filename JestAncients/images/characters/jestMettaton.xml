@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="jestMettaton.png">
+  <SubTexture name="mettaton idle0000" x="0" y="0" width="456" height="479"/>
+  <SubTexture name="mettaton idle0001" x="456" y="0" width="456" height="479"/>
+  <SubTexture name="mettaton idle0002" x="912" y="0" width="456" height="479"/>
+  <SubTexture name="mettaton idle0003" x="1368" y="0" width="456" height="479"/>
+  <SubTexture name="mettaton idle0004" x="1824" y="0" width="456" height="479"/>
+  <SubTexture name="mettaton idle0005" x="2280" y="0" width="456" height="479"/>
+  <SubTexture name="mettaton singLEFT0000" x="0" y="479" width="456" height="479"/>
+  <SubTexture name="mettaton singLEFT0001" x="456" y="479" width="456" height="479"/>
+  <SubTexture name="mettaton singLEFT0002" x="912" y="479" width="456" height="479"/>
+  <SubTexture name="mettaton singLEFT0003" x="1368" y="479" width="456" height="479"/>
+  <SubTexture name="mettaton singDOWN0000" x="1824" y="479" width="456" height="479"/>
+  <SubTexture name="mettaton singDOWN0001" x="2280" y="479" width="456" height="479"/>
+  <SubTexture name="mettaton singDOWN0002" x="0" y="958" width="456" height="479"/>
+  <SubTexture name="mettaton singDOWN0003" x="456" y="958" width="456" height="479"/>
+  <SubTexture name="mettaton singUP0000" x="912" y="958" width="456" height="479"/>
+  <SubTexture name="mettaton singUP0001" x="1368" y="958" width="456" height="479"/>
+  <SubTexture name="mettaton singUP0002" x="1824" y="958" width="456" height="479"/>
+  <SubTexture name="mettaton singUP0003" x="2280" y="958" width="456" height="479"/>
+  <SubTexture name="mettaton singRIGHT0000" x="0" y="1437" width="456" height="479"/>
+  <SubTexture name="mettaton singRIGHT0001" x="456" y="1437" width="456" height="479"/>
+  <SubTexture name="mettaton singRIGHT0002" x="912" y="1437" width="456" height="479"/>
+  <SubTexture name="mettaton singRIGHT0003" x="1368" y="1437" width="456" height="479"/>
+  <SubTexture name="mettaton poder0000" x="1824" y="1437" width="456" height="479"/>
+  <SubTexture name="mettaton poder0001" x="2280" y="1437" width="456" height="479"/>
+  <SubTexture name="mettaton poder0002" x="0" y="1916" width="456" height="479"/>
+  <SubTexture name="mettaton poder0003" x="456" y="1916" width="456" height="479"/>
+  <SubTexture name="mettaton golpe0000" x="912" y="1916" width="456" height="479"/>
+  <SubTexture name="mettaton golpe0001" x="1368" y="1916" width="456" height="479"/>
+  <SubTexture name="mettaton golpe0002" x="1824" y="1916" width="456" height="479"/>
+  <SubTexture name="mettaton golpe0003" x="2280" y="1916" width="456" height="479"/>
+</TextureAtlas>

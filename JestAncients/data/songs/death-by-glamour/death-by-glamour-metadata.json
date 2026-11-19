@@ -1,0 +1,43 @@
+{
+ "version": "2.2.4",
+ "songName": "Death by Glamour",
+ "artist": "Toby Fox",
+ "charter": "The Aftermath (Clone Hero) / El\u00edas",
+ "offsets": {},
+ "playData": {
+  "songVariations": [
+   "erect"
+  ],
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "",
+   "opponent": "jestMettaton",
+   "opponentVocals": [],
+   "playerVocals": [],
+   "instrumental": ""
+  },
+  "stage": "jestAncientsGlamour",
+  "noteStyle": "funkin",
+  "ratings": {
+   "easy": 3,
+   "normal": 6,
+   "hard": 9
+  }
+ },
+ "generatedBy": "El\u00edas",
+ "timeChanges": [
+  {
+   "t": 0.0,
+   "bpm": 159.736
+  },
+  {
+   "t": 3004.96,
+   "bpm": 148.0
+  }
+ ]
+}

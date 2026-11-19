@@ -1,0 +1,39 @@
+{
+ "version": "2.2.4",
+ "songName": "Megalovania Erect",
+ "artist": "Toby Fox (cover de RichaadEB)",
+ "charter": "Newt (Clone Hero) / El\u00edas",
+ "offsets": {},
+ "playData": {
+  "songVariations": [],
+  "difficulties": [
+   "erect",
+   "nightmare"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "",
+   "opponent": "jestSans",
+   "opponentVocals": [],
+   "playerVocals": [],
+   "instrumental": ""
+  },
+  "stage": "jestAncientsSans",
+  "noteStyle": "funkin",
+  "ratings": {
+   "erect": 12,
+   "nightmare": 15
+  }
+ },
+ "generatedBy": "El\u00edas",
+ "timeChanges": [
+  {
+   "t": 0.0,
+   "bpm": 109.2
+  },
+  {
+   "t": 8791.21,
+   "bpm": 120.0
+  }
+ ]
+}
